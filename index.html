@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+      <title>Anwesenheit</title>
+      <link rel="shortcut icon" type="image/png" href="img/faviconfu.ico">
+      <!-- CSS  -->
+      <link href="css/mystyle.css" type="text/css" rel="stylesheet"/>
+   </head>
+   <body lang="de" class="hyphen">
+      <main>
+         <div class="vertical-al">
+            <div id="instruction">
+               <span class="instruction-text" id="instr">Suche Campuscard </span>
+               <span class="instruction-text animatedDot">
+               <span>.</span>
+               <span>.</span>
+               <span>.</span>
+               </span>
+               <div id="success">
+                  <div class="sa-icon sa-success hide">
+                     <span class="sa-line sa-tip animateSuccessTip"></span>
+                     <span class="sa-line sa-long animateSuccessLong"></span>
+                     <div class="sa-placeholder"></div>
+                     <div class="sa-fix"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="fu-card">
+               <div id="campuscard"></div>
+               <img id="campuscard-fu" src="img/fu.png">
+               <div id="user-back">
+                  <div id="user-head"></div>
+                  <div id="user-body"></div>
+               </div>
+               <form class="hide" id="form">
+                  <div>
+                     <input id="first_name" type="text" placeholder="Vorname" autofocus required>
+                     <input id="last_name" type="text" placeholder="Nachname" required>
+                     <div>
+                        <button class="material-button" id="send" type="submit">
+                        Senden
+                        </button>
+                     </div>
+                  </div>
+               </form>
+               <div id="personal-data">
+                  <div id="personal-vorname"></div>
+                  <div id="personal-nachname"></div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <footer>
+         <button id="simulate" class="material-button">Simulate card found</button>           
+         <div class="footer-copyright">
+            © 2018 Timm Bahmann und Clarissa Staudt
+         </div>
+      </footer>
+      <!--  Scripts-->
+      <script src="js/view.js"></script>
+   </body>
+</html>
