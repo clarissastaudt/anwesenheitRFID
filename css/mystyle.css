@@ -34,7 +34,7 @@ main {
 }
 
 
-/* Blinking waiting dots*/
+/* Blinking waiting dots */
 
 @keyframes blink {
   0% {
@@ -68,7 +68,7 @@ main {
 }
 
 
-/* Animated Campuscard*/
+/* Animated Campuscard */
 
 #campuscard {
   margin: 0 auto;
@@ -170,7 +170,7 @@ main {
 }
 
 
-/* Scaling animation*/
+/* Scaling animation */
 
 .scale-out {
   animation: scaleout 0.4s infinite;
@@ -219,10 +219,12 @@ main {
 
 .sa-icon.sa-success .sa-line.sa-tip {
   -ms-transform: rotate(45deg) \9;
+  transform: rotate(45deg) \9;
 }
 
 .sa-icon.sa-success .sa-line.sa-long {
   -ms-transform: rotate(-45deg) \9;
+  transform: rotate(-45deg) \9;
 }
 
 .animateSuccessTip {
