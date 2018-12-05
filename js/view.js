@@ -1,5 +1,6 @@
 let $ = require('jquery')
 let fs = require('fs')
+const request = require('request')
 
 /* ______ Change view ______ */
 
@@ -123,10 +124,10 @@ function writeDate (personalData, date, filename) {
       let ln = data[l].split(';')
       if ((ln.indexOf(personalData[0]) > -1) && (ln.indexOf(date) < 0)) {
         newData += ln.join(';') + ';' + date + '\n'
-      } else if (l === '' || l.length === 0) {
+      } else if (ln === '' || ln.length === 0) {
         ;
       } else {
-        newData += l.join(';') + '\n'
+        newData += ln.join(';') + '\n'
       }
     }
     fs.writeFile(filename, newData, (err) => {
@@ -175,7 +176,12 @@ function processPersonalInfo (date, filename, id) {
 /* ______ ID requests ______ */
 
 function requestID (date, filename) {
-  $.get('192.168.4.1', function (id) {
+  request('http://localhost:61200', (err, res, body) => {
+    if (err || res === undefined) {
+      return requestID(date, filename)
+    }
+    console.log(res)
+    let id = body.trim()
     if (id !== '') {
       /* Change user view: Card detected */
       instructionCardFound()
@@ -202,8 +208,6 @@ function requestID (date, filename) {
         }, 3000)
       }
     }
-    setTimeout(requestID, 500)
-  }).fail(function () {
     setTimeout(requestID, 500)
   })
 }
